@@ -1,0 +1,15 @@
+.DS_Store
+._*
+/.cache/
+/build/
+/dist/
+/vendor/
+/vendor-src/
+/.env
+/.env.*
+/.codex/
+.venv/
+__pycache__/
+*.dSYM/
+*.log
+*.state

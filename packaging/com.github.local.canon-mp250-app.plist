@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.github.local.canon-mp250-app</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/local/libexec/canon-mp250-app</string>
+    <string>server</string>
+    <string>-o</string><string>server-port=8000</string>
+    <string>-o</string><string>listen-hostname=127.0.0.1</string>
+    <string>-o</string><string>server-hostname=localhost</string>
+    <string>-o</string><string>spool-directory=/usr/local/var/spool/canon-mp250-app</string>
+    <string>-o</string><string>log-file=/usr/local/var/log/canon-mp250-app.log</string>
+    <string>-o</string><string>log-level=info</string>
+    <string>-o</string><string>server-options=no-tls</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>STP_DATA_PATH</key><string>/usr/local/share/canon-mp250/gutenprint/5.3/xml</string>
+    <key>OPENSSL_CONF</key><string>/dev/null</string>
+    <key>OPENSSL_MODULES</key><string>/usr/local/share/canon-mp250</string>
+    <key>OPENSSL_ENGINES</key><string>/usr/local/share/canon-mp250</string>
+  </dict>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>ProcessType</key><string>Interactive</string>
+  <key>StandardOutPath</key><string>/usr/local/var/log/canon-mp250-launchd.log</string>
+  <key>StandardErrorPath</key><string>/usr/local/var/log/canon-mp250-launchd.log</string>
+</dict>
+</plist>

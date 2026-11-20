@@ -1,0 +1,18 @@
+#!/bin/sh
+# Minimal pkg-config implementation used only to bootstrap PAPPL on macOS
+# systems where Apple ships cups-config but no pkg-config executable.
+prefix=${CANON_MP250_DEPS_PREFIX:-/private/tmp/canon-mp250-prefix}
+
+case "$1:$2" in
+  --exists:libusb-1.0) exit 0 ;;
+  --exists:openssl) exit 0 ;;
+  --cflags:libusb-1.0) printf '%s\n' "-I$prefix/include/libusb-1.0" ;;
+  --libs:libusb-1.0) printf '%s\n' "-L$prefix/lib -lusb-1.0 -lobjc -framework IOKit -framework CoreFoundation -framework Security" ;;
+  --modversion:libusb-1.0) printf '%s\n' '1.0.30' ;;
+  --variable=prefix:libusb-1.0) printf '%s\n' "$prefix" ;;
+  --cflags:openssl) printf '%s\n' "-I$prefix/include" ;;
+  --libs:openssl) printf '%s\n' "-L$prefix/lib -lssl -lcrypto" ;;
+  --modversion:openssl) printf '%s\n' '3.5.8' ;;
+  --variable=prefix:openssl) printf '%s\n' "$prefix" ;;
+  *) exit 1 ;;
+esac

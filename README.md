@@ -2,7 +2,7 @@
 
 Прототип драйвера печати для USB-принтера Canon PIXMA MP250 (`04a9:173a`) на Mac с Apple Silicon и macOS 27 или новее. Стандартный диалог печати macOS отправляет Apple/PWG Raster локальной службе PAPPL по IPP. Gutenprint `bjc-MP250-series` формирует поток Canon BJRaster, а libusb передаёт его принтеру.
 
-**Статус 0.2.1.** Печать на физическом MP250 для этой версии ещё предстоит проверить. Драйвер MP250 в Gutenprint 5.3.4 имеет статус `EXPERIMENTAL`.
+**Статус проекта.** Печать проверена на физическом Canon PIXMA MP250. Драйвер MP250 в Gutenprint 5.3.4 имеет статус `EXPERIMENTAL`.
 
 ## Установка из ZIP
 
